@@ -34,6 +34,8 @@ public class App implements Callable<Integer> {
 
         var compareResult = Differ.generate(filepath1, filepath2, format);
 
+        System.out.println(compareResult);
+
         return 0;
     }
 

@@ -1,0 +1,13 @@
+{"version": 2, "width": 108, "height": 28, "timestamp": 1745264138, "env": {"SHELL": "/bin/bash", "TERM": "xterm-256color"}}
+[0.049607, "o", "\u001b[?2004h\u001b[0;32m\u001b[0m\u001b[0;32msmthwd\u001b[0;36m @ \u001b[0;36mDimaPC ~/java-project-71\u001b[0;32m (main)\r\r\n\u001b[0;32m└─\u001b[0m\u001b[0;32m $\u001b[0m\u001b[0;32m ▶\u001b[0m"]
+[0.556578, "o", "./app/build/install/app/bin/app ./app/src/test/resources/f1.json ./app/src/test/resources/f2.json"]
+[0.939735, "o", "\r\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C-h\u001b[K"]
+[1.571399, "o", "\r\n\u001b[?2004l\r"]
+[2.049589, "o", "Usage: \u001b[1mgendiff\u001b[21m\u001b[0m [\u001b[33m-hV\u001b[39m\u001b[0m] [\u001b[33m-f\u001b[39m\u001b[0m=\u001b[3mformat\u001b[23m\u001b[0m] \u001b[33mfilepath1\u001b[39m\u001b[0m \u001b[33mfilepath2\u001b[39m\u001b[0m\r\nCompares two configuration files and shows a difference.\r\n\u001b[33m \u001b[39m\u001b[0m     \u001b[33mfilepath1\u001b[39m\u001b[0m         path to first file\r\n\u001b[33m \u001b[39m\u001b[0m     \u001b[33mfilepath2\u001b[39m\u001b[0m         path to second file\r\n  \u001b[33m-f\u001b[39m\u001b[0m, \u001b[33m--format\u001b[39m\u001b[0m=\u001b[3mformat\u001b[23m\u001b[0m   output format [default: stylish]\r\n  \u001b[33m-h\u001b[39m\u001b[0m, \u001b[33m--help\u001b[39m\u001b[0m            Show this help message and exit.\r\n  \u001b[33m-V\u001b[39m\u001b[0m, \u001b[33m--version\u001b[39m\u001b[0m         Print version information and exit.\r\n"]
+[2.088981, "o", "\u001b[?2004h\u001b[0;32m\u001b[0m\u001b[0;32msmthwd\u001b[0;36m @ \u001b[0;36mDimaPC ~/java-project-71\u001b[0;32m (main)\r\r\n\u001b[0;32m└─\u001b[0m\u001b[0;32m $\u001b[0m\u001b[0;32m ▶\u001b[0m"]
+[2.852296, "o", "./app/build/install/app/bin/app -h"]
+[3.259819, "o", "\b\b./app/src/test/resources/f1.json ./app/src/test/resources/f2.json"]
+[4.091733, "o", "\r\n\u001b[?2004l\r"]
+[4.854313, "o", "{\r\n  - follow: false\r\n    host: hexlet.io\r\n  - proxy: 123.234.53.22\r\n  - timeout: 50\r\n  + timeout: 20\r\n  + verbose: true\r\n}\r\n"]
+[4.882, "o", "\u001b[?2004h\u001b[0;32m\u001b[0m\u001b[0;32msmthwd\u001b[0;36m @ \u001b[0;36mDimaPC ~/java-project-71\u001b[0;32m (main)\r\r\n\u001b[0;32m└─\u001b[0m\u001b[0;32m $\u001b[0m\u001b[0;32m ▶\u001b[0m"]
+[6.315588, "o", "\u001b[?2004l\r\r\nexit\r\n"]
