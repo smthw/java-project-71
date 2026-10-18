@@ -1,53 +1,27 @@
 package hexlet.code;
 
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import picocli.CommandLine;
 import picocli.CommandLine.Command;
 import picocli.CommandLine.Option;
 import picocli.CommandLine.Parameters;
 
-import java.util.Map;
 import java.util.concurrent.Callable;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 
 @Command(name = "gendiff", mixinStandardHelpOptions = true, version = "gendiff 1.0",
         description = "Compares two configuration files and shows a difference.")
 public class App implements Callable<Integer> {
     @Parameters(index = "0", paramLabel = "filepath1", description = "path to first file")
-    private String filepath1;
+    private String filePath1;
 
     @Parameters(index = "1", paramLabel = "filepath2", description = "path to second file")
-    private String filepath2;
+    private String filePath2;
 
     @Option(names = {"-f", "--format"}, paramLabel = "format", description = "output format [default: stylish]")
     private String format;
 
     @Override
-    public Integer call()  throws Exception {
-        Path path1 = Paths.get(filepath1).toAbsolutePath().normalize();
-        Path path2 = Paths.get(filepath2).toAbsolutePath().normalize();
-
-        if (!Files.exists(path1)) {
-            throw new Exception("File '" + path1 + "' does not exist");
-        }
-
-        if (!Files.exists(path1)) {
-            throw new Exception("File '" + path2 + "' does not exist");
-        }
-
-        String content1 = Files.readString(path1);
-        String content2 = Files.readString(path2);
-
-        ObjectMapper mapper = new ObjectMapper();
-
-        Map<String, Object> j1 = mapper.readValue(content1, new TypeReference<>() {});
-        Map<String, Object> j2 = mapper.readValue(content2, new TypeReference<>() {});
-
-        System.out.println(j1);
-        System.out.println(j2);
+    public Integer call() throws Exception {
+        var dif = Differ.generate(filePath1, filePath2);
 
         return  0;
     }
