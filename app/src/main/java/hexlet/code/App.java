@@ -23,6 +23,7 @@ public class App implements Callable<Integer> {
     public Integer call() throws Exception {
         var dif = Differ.generate(filePath1, filePath2);
 
+        System.out.println(dif);
         return  0;
     }
 

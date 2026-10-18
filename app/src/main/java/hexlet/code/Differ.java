@@ -42,7 +42,7 @@ public class Differ {
         StringBuilder sb = new StringBuilder("{\n");
 
         for (var key : allKeys) {
-            System.out.println(key);
+//            System.out.println(key);
 
             var hasKey1 = content1.containsKey(key);
             var hasKey2 = content2.containsKey(key);
