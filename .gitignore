@@ -57,4 +57,4 @@ bin
 tmp/
 .idea
 /app/src/main/java/hexlet/code/Main.java
-/app/src/test/
+/app/src/test/resources

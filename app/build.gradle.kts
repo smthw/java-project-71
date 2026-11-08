@@ -1,6 +1,8 @@
 plugins {
     application
     id("java")
+    id("com.diffplug.spotless") version "8.10.0"
+    jacoco
 }
 
 group = "hexlet.code"
@@ -24,4 +26,63 @@ tasks.test {
 
 application {
     mainClass = "hexlet.code.App"
+}
+
+spotless {
+    java {
+        importOrder()
+        removeUnusedImports()
+        googleJavaFormat().aosp()
+        formatAnnotations()
+        leadingTabsToSpaces(4)
+        endWithNewline()
+    }
+}
+
+jacoco {
+    toolVersion = "0.8.14"
+}
+val coverageExcludes = listOf("hexlet/code/App.class")
+
+fun JacocoReportBase.excludeEntryPoint() {
+    classDirectories.setFrom(
+        files(classDirectories.files.map {
+            fileTree(it) {
+                exclude(coverageExcludes)
+            }
+        })
+    )
+}
+
+tasks.jacocoTestReport {
+    dependsOn(tasks.test)
+    excludeEntryPoint()
+
+    reports {
+        xml.required.set(true)
+        html.required.set(true)
+    }
+}
+
+tasks.test {
+    finalizedBy(tasks.jacocoTestReport)
+}
+
+tasks.jacocoTestCoverageVerification {
+    dependsOn(tasks.jacocoTestReport)
+    excludeEntryPoint()
+
+    violationRules {
+        rule {
+            limit {
+                counter = "INSTRUCTION"
+                value = "COVEREDRATIO"
+                minimum = "0.80".toBigDecimal()
+            }
+        }
+    }
+}
+
+tasks.check {
+    dependsOn(tasks.jacocoTestCoverageVerification)
 }
