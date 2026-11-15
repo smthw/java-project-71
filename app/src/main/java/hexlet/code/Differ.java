@@ -1,13 +1,11 @@
 package hexlet.code;
 
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
-import java.util.TreeMap;
 import java.util.TreeSet;
 
 public class Differ {
@@ -23,19 +21,11 @@ public class Differ {
             throw new Exception("File '" + path2 + "' does not exist");
         }
 
-        ObjectMapper mapper = new ObjectMapper();
-
-        TreeMap<String, Object> content1 =
-                mapper.readValue(Files.readString(path1), new TypeReference<>() {});
-        TreeMap<String, Object> content2 =
-                mapper.readValue(Files.readString(path2), new TypeReference<>() {});
+        Map<String, Object> content1 = Parser.parse(path1);
+        Map<String, Object> content2 = Parser.parse(path2);
 
         //        System.out.println(content1);
         //        System.out.println(content2);
-
-        if (content1.equals(content2)) {
-            return content1.toString();
-        }
 
         Set<String> allKeys = new TreeSet<>(content1.keySet());
         allKeys.addAll(content2.keySet());

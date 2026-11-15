@@ -44,4 +44,22 @@ class DifferTest {
                                 "src/test/resources/f1.json",
                                 "src/test/resources/nonexistent.json"));
     }
+
+    @Test
+    void testGenerateYaml() throws Exception {
+        String expected =
+                """
+                {
+                  - follow: false
+                    host: hexlet.io
+                  - proxy: 123.234.53.22
+                  - timeout: 50
+                  + timeout: 20
+                  + verbose: true
+                }""";
+
+        String actual = Differ.generate("src/test/resources/f1.yml", "src/test/resources/f2.yml");
+
+        assertEquals(expected, actual);
+    }
 }
