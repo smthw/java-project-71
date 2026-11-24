@@ -3,10 +3,9 @@ package hexlet.code;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-import org.junit.jupiter.api.Test;
-
 import java.nio.file.Files;
 import java.nio.file.Path;
+import org.junit.jupiter.api.Test;
 
 class DifferTest {
 
@@ -68,7 +67,8 @@ class DifferTest {
 
     @Test
     void testGenerateIdenticalFiles() throws Exception {
-        String expected = """
+        String expected =
+                """
             {
                 follow: false
                 host: hexlet.io
@@ -76,25 +76,18 @@ class DifferTest {
                 timeout: 50
             }""";
 
-        String actual = Differ.generate(
-                "src/test/resources/f1.json",
-                "src/test/resources/f1.json"
-        );
+        String actual = Differ.generate("src/test/resources/f1.json", "src/test/resources/f1.json");
 
         assertEquals(expected, actual);
     }
 
     @Test
     void testGenerateNested() throws Exception {
-        String expected = Files.readString(
-                Path.of("src/test/resources/expected-stylish.txt")
-        ).stripTrailing();
+        String expected =
+                Files.readString(Path.of("src/test/resources/expected-stylish.txt"))
+                        .stripTrailing();
 
-
-        String actual = Differ.generate(
-                "src/test/resources/f3.json",
-                "src/test/resources/f4.json"
-        );
+        String actual = Differ.generate("src/test/resources/f3.json", "src/test/resources/f4.json");
 
         assertEquals(expected, actual);
     }

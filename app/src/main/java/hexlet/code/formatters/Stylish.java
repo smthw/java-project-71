@@ -17,42 +17,21 @@ public class Stylish {
 
             switch (type) {
                 case "added" ->
-                        sb.append("  + ")
-                                .append(key)
-                                .append(": ")
-                                .append(newValue)
-                                .append("\n");
+                        sb.append("  + ").append(key).append(": ").append(newValue).append("\n");
 
                 case "removed" ->
-                        sb.append("  - ")
-                                .append(key)
-                                .append(": ")
-                                .append(oldValue)
-                                .append("\n");
+                        sb.append("  - ").append(key).append(": ").append(oldValue).append("\n");
 
                 case "unchanged" ->
-                        sb.append("    ")
-                                .append(key)
-                                .append(": ")
-                                .append(oldValue)
-                                .append("\n");
+                        sb.append("    ").append(key).append(": ").append(oldValue).append("\n");
 
                 case "changed" -> {
-                    sb.append("  - ")
-                            .append(key)
-                            .append(": ")
-                            .append(oldValue)
-                            .append("\n");
+                    sb.append("  - ").append(key).append(": ").append(oldValue).append("\n");
 
-                    sb.append("  + ")
-                            .append(key)
-                            .append(": ")
-                            .append(newValue)
-                            .append("\n");
+                    sb.append("  + ").append(key).append(": ").append(newValue).append("\n");
                 }
 
-                default -> throw new IllegalArgumentException(
-                        "Unknown diff type: " + type);
+                default -> throw new IllegalArgumentException("Unknown diff type: " + type);
             }
         }
 

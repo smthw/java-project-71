@@ -10,8 +10,7 @@ import java.util.TreeSet;
 
 public class DiffBuilder {
     public static List<Map<String, Object>> build(
-            Map<String, Object> content1,
-            Map<String, Object> content2) {
+            Map<String, Object> content1, Map<String, Object> content2) {
 
         List<Map<String, Object>> diff = new ArrayList<>();
 
